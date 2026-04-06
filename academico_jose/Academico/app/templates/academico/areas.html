@@ -1,0 +1,30 @@
+{% extends 'academico/base.html' %}
+
+{% block title %}Áreas do Saber{% endblock %}
+
+{% block content %}
+<div class="page-card">
+    <h1>Lista de Áreas do Saber</h1>
+
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for a in areas %}
+                <tr>
+                    <td>{{ a.nome }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td>Nenhum registro encontrado.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

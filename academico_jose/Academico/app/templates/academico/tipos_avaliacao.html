@@ -1,0 +1,30 @@
+{% extends 'academico/base.html' %}
+
+{% block title %}Tipos de Avaliação{% endblock %}
+
+{% block content %}
+<div class="page-card">
+    <h1>Tipos de Avaliação</h1>
+
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for t in tipos %}
+                <tr>
+                    <td>{{ t.nome }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td>Nenhum registro encontrado.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

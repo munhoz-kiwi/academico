@@ -1,0 +1,30 @@
+{% extends 'academico/base.html' %}
+
+{% block title %}Ocupações{% endblock %}
+
+{% block content %}
+<div class="page-card">
+    <h1>Lista de Ocupações</h1>
+
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for o in ocupacoes %}
+                <tr>
+                    <td>{{ o.nome }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td>Nenhum registro encontrado.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

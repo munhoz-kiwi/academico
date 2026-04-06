@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Sistema Acadêmico{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="sidebar__header">
+            <a class="sidebar__brand" href="{% url 'home' %}">Acadêmico</a>
+            <button type="button" id="themeToggle" class="sidebar__theme-btn">Modo Escuro</button>
+        </div>
+
+        <ul class="sidebar__menu">
+            <li><a href="{% url 'home' %}">Início</a></li>
+            <li><a href="{% url 'ufs' %}">UFs</a></li>
+            <li><a href="{% url 'pessoas' %}">Pessoas</a></li>
+            <li><a href="{% url 'alunos' %}">Alunos</a></li>
+            <li><a href="{% url 'professores' %}">Professores</a></li>
+            <li><a href="{% url 'cidades' %}">Cidades</a></li>
+            <li><a href="{% url 'ocupacoes' %}">Ocupações</a></li>
+            <li><a href="{% url 'areas' %}">Áreas do Saber</a></li>
+            <li><a href="{% url 'turnos' %}">Turnos</a></li>
+            <li><a href="{% url 'instituicoes' %}">Instituições</a></li>
+            <li><a href="{% url 'cursos' %}">Cursos</a></li>
+            <li><a href="{% url 'turmas' %}">Turmas</a></li>
+            <li><a href="{% url 'disciplinas' %}">Disciplinas</a></li>
+            <li><a href="{% url 'curso_disciplinas' %}">Curso x Disciplinas</a></li>
+            <li><a href="{% url 'matriculas' %}">Matrículas</a></li>
+            <li><a href="{% url 'avaliacoes' %}">Avaliações</a></li>
+            <li><a href="{% url 'tipos_avaliacao' %}">Tipos de Avaliação</a></li>
+            <li><a href="{% url 'frequencias' %}">Frequências</a></li>
+            <li><a href="{% url 'ocorrencias' %}">Ocorrências</a></li>
+        </ul>
+    </nav>
+
+    <main class="content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <script src="{% static 'js/theme.js' %}"></script>
+</body>
+</html>

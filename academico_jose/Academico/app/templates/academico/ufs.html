@@ -1,0 +1,32 @@
+{% extends 'academico/base.html' %}
+
+{% block title %}UFs{% endblock %}
+
+{% block content %}
+<div class="page-card">
+    <h1>Lista de UFs</h1>
+
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>Sigla</th>
+                    <th>Nome</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for uf in ufs %}
+                <tr>
+                    <td>{{ uf.sigla }}</td>
+                    <td>{{ uf.nome }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="2">Nenhum registro encontrado.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

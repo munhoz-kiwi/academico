@@ -1,0 +1,19 @@
+{% extends 'academico/base.html' %}
+
+{% block title %}Início{% endblock %}
+
+{% block content %}
+<div class="page-card">
+    <h1>Sistema Acadêmico</h1>
+    <p>Use o menu lateral para acessar os cadastros e listagens.</p>
+
+    <div class="home-grid">
+        <a class="home-card" href="{% url 'pessoas' %}">Pessoas</a>
+        <a class="home-card" href="{% url 'cursos' %}">Cursos</a>
+        <a class="home-card" href="{% url 'disciplinas' %}">Disciplinas</a>
+        <a class="home-card" href="{% url 'matriculas' %}">Matrículas</a>
+        <a class="home-card" href="{% url 'avaliacoes' %}">Avaliações</a>
+        <a class="home-card" href="{% url 'frequencias' %}">Frequências</a>
+    </div>
+</div>
+{% endblock %}

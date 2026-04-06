@@ -1,0 +1,36 @@
+{% extends 'academico/base.html' %}
+
+{% block title %}Frequências{% endblock %}
+
+{% block content %}
+<div class="page-card">
+    <h1>Lista de Frequências</h1>
+
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>Curso</th>
+                    <th>Disciplina</th>
+                    <th>Aluno</th>
+                    <th>Número de Faltas</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for f in frequencias %}
+                <tr>
+                    <td>{{ f.curso }}</td>
+                    <td>{{ f.disciplina }}</td>
+                    <td>{{ f.aluno }}</td>
+                    <td>{{ f.numero_faltas }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="4">Nenhum registro encontrado.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'academico/base.html' %}
+
+{% block title %}Curso x Disciplinas{% endblock %}
+
+{% block content %}
+<div class="page-card">
+    <h1>Curso x Disciplinas</h1>
+
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>Curso</th>
+                    <th>Disciplina</th>
+                    <th>Carga Horária</th>
+                    <th>Período</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cd in curso_disciplinas %}
+                <tr>
+                    <td>{{ cd.curso }}</td>
+                    <td>{{ cd.disciplina }}</td>
+                    <td>{{ cd.carga_horaria }}</td>
+                    <td>{{ cd.periodo }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="4">Nenhum registro encontrado.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

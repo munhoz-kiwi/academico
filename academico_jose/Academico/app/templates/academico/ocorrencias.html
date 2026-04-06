@@ -1,0 +1,38 @@
+{% extends 'academico/base.html' %}
+
+{% block title %}Ocorrências{% endblock %}
+
+{% block content %}
+<div class="page-card">
+    <h1>Lista de Ocorrências</h1>
+
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>Descrição</th>
+                    <th>Data</th>
+                    <th>Curso</th>
+                    <th>Disciplina</th>
+                    <th>Pessoa</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for o in ocorrencias %}
+                <tr>
+                    <td>{{ o.descricao }}</td>
+                    <td>{{ o.data }}</td>
+                    <td>{{ o.curso }}</td>
+                    <td>{{ o.disciplina }}</td>
+                    <td>{{ o.pessoa }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="5">Nenhum registro encontrado.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

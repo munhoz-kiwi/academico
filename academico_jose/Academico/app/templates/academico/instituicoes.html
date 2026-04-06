@@ -1,0 +1,36 @@
+{% extends 'academico/base.html' %}
+
+{% block title %}Instituições{% endblock %}
+
+{% block content %}
+<div class="page-card">
+    <h1>Lista de Instituições</h1>
+
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Site</th>
+                    <th>Telefone</th>
+                    <th>Cidade</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in instituicoes %}
+                <tr>
+                    <td>{{ i.nome }}</td>
+                    <td>{{ i.site }}</td>
+                    <td>{{ i.telefone }}</td>
+                    <td>{{ i.cidade }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="4">Nenhum registro encontrado.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
